@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>vetores.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+vetores.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">vetores {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner entrada = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Defina o tamanho do vetor: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">quantidade = entrada.nextInt()</span><span class="s0">;</span>
+        <span class="s0">int</span><span class="s1">[] grupoNumeros = </span><span class="s0">new int</span><span class="s1">[quantidade]</span><span class="s0">;</span>
+
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Defina os valores do vetor:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; quantidade</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;Número na posição &quot; </span><span class="s1">+ i + </span><span class="s2">&quot;: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">grupoNumeros[i] = entrada.nextInt()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+
+        <span class="s0">int </span><span class="s1">somaTotal = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; quantidade</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">somaTotal += grupoNumeros[i]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+
+        <span class="s0">double </span><span class="s1">mediaNumeros = (</span><span class="s0">double</span><span class="s1">) somaTotal / quantidade</span><span class="s0">;</span>
+
+
+        <span class="s0">int </span><span class="s1">maiorNumero = grupoNumeros[</span><span class="s3">0</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">1</span><span class="s0">; </span><span class="s1">i &lt; quantidade</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s0">if </span><span class="s1">(grupoNumeros[i] &gt; maiorNumero) {</span>
+                <span class="s1">maiorNumero = grupoNumeros[i]</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+
+        <span class="s0">int </span><span class="s1">menorNumero = grupoNumeros[</span><span class="s3">0</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">1</span><span class="s0">; </span><span class="s1">i &lt; quantidade</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s0">if </span><span class="s1">(grupoNumeros[i] &lt; menorNumero) {</span>
+                <span class="s1">menorNumero = grupoNumeros[i]</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Soma de todos os valores do vetor: &quot; </span><span class="s1">+ somaTotal)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Média de todos os valores do vetor: &quot; </span><span class="s1">+ mediaNumeros)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;O maior valor do vetor: &quot; </span><span class="s1">+ maiorNumero)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;O menor valor do vetor: &quot; </span><span class="s1">+ menorNumero)</span><span class="s0">;</span>
+
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Digite a posição para substituir: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">posicao1 = entrada.nextInt()</span><span class="s0">;</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Digite o novo valor para essa posição: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">grupoNumeros[posicao1] = entrada.nextInt()</span><span class="s0">;</span>
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Digite a segunda posição para substituir: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">posicao2 = entrada.nextInt()</span><span class="s0">;</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Digite o novo valor para essa posição: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">grupoNumeros[posicao2] = entrada.nextInt()</span><span class="s0">;</span>
+
+
+        <span class="s1">somaTotal = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; quantidade</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">somaTotal += grupoNumeros[i]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">mediaNumeros = (</span><span class="s0">double</span><span class="s1">) somaTotal / quantidade</span><span class="s0">;</span>
+
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Soma dos valores após as substituições: &quot; </span><span class="s1">+ somaTotal)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Média dos valores após as substituições: &quot; </span><span class="s1">+ mediaNumeros)</span><span class="s0">;</span>
+
+        <span class="s1">entrada.close()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
